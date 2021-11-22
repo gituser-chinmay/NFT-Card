@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NFT CARD</title>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            function mouseHover(obj) {
+                var item = document.getElementById(obj);
+                item.style.transitionDuration = "0.3s";
+                item.style.color = "hsl(178, 100%, 50%)"; 
+            }
+            function mouseLeave(obj) {
+                var item = document.getElementById(obj);
+                item.style.transitionDuration = "0.3s";
+                item.style.color = "white";
+            }
+            function viewIconShow() {
+                var item = document.getElementById("view");
+                item.style.transitionDuration = "0.3s";
+                item.style.opacity = "0.4"
+                document.getElementById("viewicon").style.opacity="1";
+                document.getElementById("viewicon").transitionDuration = "0.3s";
+            }
+            function viewIconHide() {
+                var item = document.getElementById("view");
+                item.style.transitionDuration = "0.3s";
+                item.style.opacity = "1";
+                document.getElementById("viewicon").style.opacity="0";
+                document.getElementById("viewicon").transitionDuration = "0.3s";
+            }
+        </script>
+    </head>
+    <body style="background-color: hsl(217, 54%, 11%)">
+        <div class="container">
+            <div class="card">
+                <div class="nft-picture" onmouseover="viewIconShow()" onmouseleave="viewIconHide()">
+                    <img src="../resources/images/image-equilibrium.jpg"  id="view" alt="" width="310px" height="310px">
+                    <div id="icon">
+                        <img src="../resources/images/icon-view.svg" id="viewicon"alt="">
+                    </div>
+                </div>
+                <div class="nft-info">
+                    <button onmouseover="mouseHover('name')" onmouseleave="mouseLeave('name')" style="background-color: hsl(216, 50%, 16%);">
+                        <h2 id="name">Equilibrium#3429</h2>
+                    </button>
+                    <p>Our equlibrium collection promotes balance and calm.</p>
+                    <div class="nft-stats">
+                        <div class="nft-balance">
+                            <img src="../resources/images/icon-ethereum.svg" alt="" style="float: left;">
+                            <p>0.0041ETH</p>
+                        </div>
+                        <div class="nft-duration">
+                            <img src="../resources/images/icon-clock.svg" alt="" style="float: right;">
+                            <p>3 Days</p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="nft-owner">
+                    <img src="../resources/images/image-avatar.png" alt="" style="float: left;">
+                    <p>Creation of <span id="author" onmouseover="mouseHover('author')" onmouseleave="mouseLeave('author')">Jules Wyvern</span></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
